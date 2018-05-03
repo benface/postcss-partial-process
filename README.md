@@ -1,4 +1,4 @@
-# PostCSS Partial Process [![Build Status][ci-img]][ci]
+# PostCSS Partial Process
 
 [PostCSS] plugin that runs other plugins on parts of a CSS file delimited by comments.
 
