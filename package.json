@@ -1,0 +1,37 @@
+{
+  "name": "postcss-partial-process",
+  "version": "1.0.0",
+  "description": "PostCSS plugin that runs other plugins on parts of a CSS file delimited by comments",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin"
+  ],
+  "author": "Benoît Rouleau <benoit.rouleau@icloud.com>",
+  "license": "MIT",
+  "repository": "benface/postcss-partial-process",
+  "bugs": {
+    "url": "https://github.com/benface/postcss-partial-process/issues"
+  },
+  "homepage": "https://github.com/benface/postcss-partial-process",
+  "dependencies": {
+    "postcss": "^6.0.16"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-postcss": "^2.0.2",
+    "jest": "^22.4.2"
+  },
+  "scripts": {
+    "test": "jest && eslint *.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5",
+    "env": {
+      "jest": true
+    }
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
