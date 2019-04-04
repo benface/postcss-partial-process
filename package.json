@@ -1,6 +1,6 @@
 {
   "name": "postcss-partial-process",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "PostCSS plugin that runs other plugins on parts of a CSS file delimited by comments",
   "keywords": [
     "postcss",
