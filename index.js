@@ -1,9 +1,9 @@
-var postcss = require('postcss');
+const postcss = require('postcss');
 
 module.exports = postcss.plugin('postcss-partial-process', ({
-    startComment = 'start postcss-partial-process',
-    endComment = 'end postcss-partial-process',
-    removeComments = false,
+    startComment = 'postcss-partial-process start',
+    endComment = 'postcss-partial-process end',
+    removeComments = 'auto',
     plugins = []
 } = {}) => {
     return root => {
@@ -22,20 +22,23 @@ module.exports = postcss.plugin('postcss-partial-process', ({
         root.each(node => {
             let starting = false;
             let ending = false;
+            let removeComment = false;
 
             if (node.type === 'comment') {
-                let matches = node.toString().match(/\/\*\s*(.*?)\s*\*\//, '');
+                let comment = node.toString();
+                let matches = comment.match(/\/\*!?\s*(.*?)\s*\*\//, '');
                 matches = matches || [];
                 if (matches.length > 1) {
                     starting = !processing && matches[1] === startComment;
                     ending = processing && matches[1] === endComment;
+                    removeComment = removeComments === true || (removeComments === 'auto' && !comment.startsWith('/*!'));
                 }
             }
 
             if (ending) {
                 end(result => {
                     node.before(result.root);
-                    if (removeComments) {
+                    if (removeComment) {
                         node.remove();
                     }
                 });
@@ -48,7 +51,7 @@ module.exports = postcss.plugin('postcss-partial-process', ({
 
             if (starting) {
                 partialRoot = postcss.root();
-                if (removeComments) {
+                if (removeComment) {
                     node.remove();
                 }
                 processing = true;
