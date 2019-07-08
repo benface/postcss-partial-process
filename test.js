@@ -6,7 +6,9 @@ function run(input, output, opts) {
     return postcss([
             partialProcess(opts),
         ])
-        .process(input)
+        .process(input, {
+            from: undefined,
+        })
         .then(result => {
             expect(result.css).toEqual(output);
             expect(result.warnings().length).toBe(0);

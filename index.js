@@ -9,9 +9,9 @@ module.exports = postcss.plugin('postcss-partial-process', ({
     return root => {
         let processing = false;
         let partialRoot = null;
-        let promises = [];
+        const promises = [];
 
-        let end = (callback) => {
+        const end = (callback) => {
             promises.push(
                 postcss(plugins).process(partialRoot, {
                     from: undefined

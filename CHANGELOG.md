@@ -21,9 +21,10 @@ and this project mostly adheres to [Semantic Versioning](https://semver.org/spec
 ### Fixed
 - Important comments are now detected properly
 
-## 1.0.0 - 2018-05-03
+## [1.0.0] - 2018-05-03
 
 Initial release
 
 [Unreleased]: https://github.com/benface/postcss-partial-process/compare/v2.0.0...HEAD
 [2.0.0]: https://github.com/benface/postcss-partial-process/compare/v1.0.0...v2.0.0
+[1.0.0]: https://github.com/benface/postcss-partial-process/releases/tag/v1.0.0
