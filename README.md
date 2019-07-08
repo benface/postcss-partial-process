@@ -12,14 +12,14 @@ npm install postcss-partial-process
 
 ```js
 postcss([
-    require('postcss-partial-process')({
-        startComment: 'postcss-partial-process start', // default
-        endComment: 'postcss-partial-process end', // default
-        removeComments: 'auto', // default, means the comments are removed unless they are important (e.g. /*! like this */); also accepts `true` or `false`
-        plugins = [
-            require('some postcss plugin'), // this plugin will only run between the comments "postcss-partial-process start" and "postcss-partial-process end"
-        ],
-    }),
+  require('postcss-partial-process')({
+    startComment: 'postcss-partial-process start', // default
+    endComment: 'postcss-partial-process end', // default
+    removeComments: 'auto', // default, means the comments are removed unless they are important (e.g. /*! like this */); also accepts `true` or `false`
+    plugins = [
+      require('some postcss plugin'), // this plugin will only run between the comments "postcss-partial-process start" and "postcss-partial-process end"
+    ],
+  }),
 ])
 ```
 
