@@ -17,7 +17,7 @@
     "release": "f(){ release-it $1 && github-release-from-changelog ;};f"
   },
   "dependencies": {
-    "postcss": "^7.0.32"
+    "postcss": "^8.2.10"
   },
   "devDependencies": {
     "github-release-from-changelog": "^2.1.1",
